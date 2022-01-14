@@ -34,31 +34,35 @@ console.log(`Encontrado(s) ${safeDishes.length} pratos(s) seguro(s).`)
 # Complexidade de execução
 
 (
-             (cada prato do menu "m") x
-               (cada ingrediente "i") x
-(procurar se contém em allergies "n")   // Qual seria a complexidade disso, ein?
+                    (cada pessoa "p") *
+         (cada alergia no grupo "a'")   // Atenção aqui! é o conjunto total de alergias
 ) +
 (
-                    (cada pessoa "p") x
-         (cada alergia no grupo "a'")   // Atenção aqui! é o conjunto total de alergias
+             (cada prato do menu "m") *
+               (cada ingrediente "i") *
+(procurar se contém em allergies "a'")   // array.includes() tem complexidade linear => O(a')
+)
 ----------------------------
-## complexidade = (m x i) + (p x a')
-## (O) mi + pa
+## complexidade = (p * a') + (m * i * a')
+## O(pa' + mia')
 
-##
 m = 1.000.000 pratos no menu
 i = 5 ingredientes em média
 p = 75 pessoas
 a = 3 alergias em média
 a' = 30 alergias no grupo (alergias únicas no grupo)
 n = Qual seria a complexidade disso, ein?
-resultado = (1.000.000 * 5 * n) + (75 * 30)
-          = 5.000.000 * n + 2.225
+## resultado = (1.000.000 * 5 * 30) + (75 * 30)
+             = 155.002.225
+             // ~7.25x mais rápido que solution1 (1.125.000.000)
 
 
 # Complexidade de espaço
 
-(cada alergia no grupo "a'")   // Atenção aqui! é o conjunto total de alergias
+(cada alergia no grupo "a'")
 ----------------------------
-complexidade = a'
+## complexidade = a'
+## O(a')
+## resultado = 30
+             // pior que solution1 (0)
 */
