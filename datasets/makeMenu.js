@@ -1,10 +1,10 @@
-const allIngredients = require('./ingredients.json')
+const allIngredients = require(`${__dirname}/ingredients.json`)
 const fs = require('fs')
 
 module.exports = (quantity, delta = null) => {
   const fileName = `menu-${quantity}${(delta !== null) ? '-' + delta : ''}.json`
   try {
-    return require(`./stored/${fileName}`)
+    return require(`${__dirname}/stored/${fileName}`)
   } catch (ignore) {}
 
   const output = []
@@ -23,11 +23,11 @@ module.exports = (quantity, delta = null) => {
     })
   }
 
-  fs.writeFileSync(`../datasets/stored/${fileName}`, "[")
+  fs.writeFileSync(`${__dirname}/stored/${fileName}`, "[")
   for(var i = 0; i < output.length; i++){
     try{
       var outputStr = JSON.stringify(output[i]) + ((i === output.length - 1) ? "]" : ",")
-      fs.appendFileSync(`../datasets/stored/${fileName}`, outputStr, (err) => {
+      fs.appendFileSync(`${__dirname}/stored/${fileName}`, outputStr, (err) => {
         if(err){
           console.log(`appendFileSync error`)
           console.log(err)

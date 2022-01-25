@@ -1,5 +1,5 @@
-const makePeople = require('../datasets/makePeople')
-const makeMenu = require('../datasets/makeMenu')
+const makePeople = require(`${__dirname}/../datasets/makePeople`)
+const makeMenu = require(`${__dirname}/../datasets/makeMenu`)
 
 const numPeople = 10
 const numMenuItems = 1000

@@ -1,4 +1,4 @@
-const { people, menu } = require('./_dataload.js')
+const { people, menu } = require(`${__dirname}/_dataload.js`)
 
 console.time('runtime');
 // @TODO memoizar alguma coisa?
@@ -12,10 +12,10 @@ console.log(`Encontrado(s) ${safeDishes.length} pratos(s) seguro(s).`)
 /*
 # Complexidade de execução
 
-@TODO Calcular compleidade
+@TODO Calcular complexidade
 
 
 # Complexidade de espaço
 
-@TODO Calcular compleidade
+@TODO Calcular complexidade
 */

@@ -1,4 +1,4 @@
-const { people, menu } = require('./_dataload.js')
+const { people, menu } = require(`${__dirname}/_dataload.js`)
 
 console.time('runtime');
 const safeDishes = []
