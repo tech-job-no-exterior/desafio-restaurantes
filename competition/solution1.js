@@ -45,6 +45,7 @@ console.log(`Encontrado(s) ${finalists.length} restaurantes(s) finalista(s).`)
   (cada ingrediente "i") 
 ------------------------
 ## complexidade = r^2 * m^2 * i^2
+## O(r^2 m^2 i^2)
 
 ## exemplo
 r = 200 restaurantes
